@@ -1,4 +1,4 @@
-document.getElementById('logo').src = 'images/untitled.png';
+document.getElementById('logo').src = 'images/Untitled.png';
 
 
 
