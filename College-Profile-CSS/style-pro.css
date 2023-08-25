@@ -473,6 +473,7 @@ nav{
     flex-direction: column;
     justify-content: flex-start;
     gap: 20px;
+    overflow: hidden;
 }
 
 .cutoff-ads{
@@ -925,4 +926,23 @@ footer{
     color: black;
     border: 0px solid transparent;
     border-radius: 5px;
+}
+
+
+/*alert*/
+
+#alert-1{
+    display: none;
+}
+
+#alert-2{
+    display: none;
+}
+
+#alert-3{
+    display: none;
+}
+
+#alert-no-data{
+    display: none;
 }
