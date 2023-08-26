@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+
 /*header*/
 
 a{
@@ -22,6 +23,7 @@ header{
     align-content: flex-start;
     border-bottom: 0px solid transparent;
     box-shadow: 0px 2px 60px rgba(255, 71, 15, 0.381);
+
 }
 
 #header-back-img{
@@ -41,7 +43,7 @@ header{
 #header-overlay-2{
     width: 100%;
     height: auto;
-    background-color: rgba(0, 0, 0, 0.352);
+    background-color: rgba(0, 0, 0, 0.452);
 }
 
 nav{
@@ -52,6 +54,11 @@ nav{
     justify-content: flex-start;
     flex-wrap: wrap;
     align-content: center;
+    overflow: hidden;
+}
+
+#menu-btn-2{
+    display: none;
 }
 
 #navbar-topper{
@@ -59,9 +66,7 @@ nav{
     height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    justify-content: space-evenly;
     padding: 20px;
     gap: 30px;
 }
@@ -70,10 +75,12 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    flex-wrap: wrap;
-    align-content: center;
     gap: 20px;
     list-style: none;
+}
+
+#top-first-ul{
+    flex-grow: 1;
 }
 
 .nav-top-list-btn{
@@ -101,7 +108,8 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-content: flex-start;
+    align-content: center;
+    align-items: center;
     padding: 20px;
     gap: 30px;
 }
@@ -113,6 +121,7 @@ nav{
     justify-content: flex-start;
     flex-wrap: wrap;
     align-content: center;
+    align-items: center;
     gap: 30px;
 }
 
@@ -143,7 +152,8 @@ nav{
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
-    gap: 35px;
+    gap: 5px;
+    overflow: hidden;
 }
 
 #search-bar-main h1{
@@ -153,6 +163,19 @@ nav{
     font-size: 2.2rem;
     font-weight: 600;
     letter-spacing: 0.07rem;
+    padding-inline: 25px;
+    text-align: center;
+}
+
+#search-bar-main p{
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.07rem;
+    padding-inline: 25px;
+    text-align: center;
 }
 
 #search-bar{
@@ -163,10 +186,12 @@ nav{
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 
 #search-bar a{
+    margin-top: 35px;
     padding: 20px;
     background-color: rgb(255, 71, 15);
     color: white;
@@ -180,6 +205,7 @@ nav{
 }
 
 #search-bar a:hover{
+    margin-top: 35px;
     padding: 20px;
     background-color: white;
     color: rgb(255, 71, 15);
@@ -218,7 +244,10 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    gap: 20px;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .below-sr-btn{
@@ -256,6 +285,7 @@ nav{
     align-content: center;
     padding: 20px;
     margin-top: 20px;
+    overflow: hidden;
 }
 
 #dream-div h1{
@@ -292,6 +322,7 @@ nav{
     justify-content: flex-start;
     flex-wrap: wrap;
     align-content: center;
+    align-items: center;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -301,7 +332,6 @@ nav{
     letter-spacing: 0.07rem;
     font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 10px;
 }
 
 .dream-card p{
@@ -346,7 +376,7 @@ nav{
 }
 
 .nirf-rank-section{
-    width: 280px;
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -371,6 +401,19 @@ nav{
     font-weight: 600;
 }
 
+/*alert*/
+
+.alert{
+    font-family: 'Noto Sans', sans-serif;
+    letter-spacing: 0.07rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 11px;
+    border: 0px solid transparent;
+    border-radius: 7px;
+    background-color: gold;
+    text-align: center;
+}
 
 /*cutoff section*/
 
@@ -452,6 +495,7 @@ nav{
     letter-spacing: 0.07rem;
     font-size: 3rem;
     font-weight: 600;
+    text-align: center;
 }
 
 #cutoff-section{
@@ -570,6 +614,7 @@ nav{
     width: 100%;
     height: auto;
     margin-top: 100px;
+    overflow: hidden;
 }
 
 
@@ -716,6 +761,7 @@ nav{
     letter-spacing: 0.07rem;
     font-size: 3rem;
     font-weight: 600;
+    text-align: center;
 }
 
 #div-for-course{
@@ -776,6 +822,7 @@ footer{
     width: 100%;
     background-color: antiquewhite;
     margin-top: 100px;
+    overflow: hidden;
 }
 
 
@@ -805,7 +852,7 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 15%;
+    gap: 10%;
     margin-inline: auto;
 }
 
@@ -876,6 +923,7 @@ footer{
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 25px;
     align-content: center;
     align-items: center;
 }
