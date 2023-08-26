@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>College Counter - Find Your Dream College</title>
-        <link rel="stylesheet" href="https://collegecounter.com/College-Profile-CSS/style-pro.css">
+        <link rel="stylesheet" href="College-Profile-CSS/style-pro.css">
+        <link rel="stylesheet" href="College-Profile-CSS/college-profile-responsive.css">
+
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +21,7 @@
                     <div id="header-overlay-2">
                         <nav>
                             <div id="navbar-topper">
-                                <ul>
+                                <ul id="top-first-ul">
                                     <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-1">Bachlor of Technology</a></li>
                                     <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-2">Master of Technology</a></li>
                                     <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-3">Management</a></li>
@@ -28,10 +30,6 @@
                                     <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-6">IISERs</a></li>
                                     <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-7">MITs</a></li>
                                     <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-8">RAMs</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-9">IIMs</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-10">IISERs</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-11">MITs</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-12">RAMs</a></li>
                                 </ul>
                                 <ul>
                                     <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-contact">Contact</a></li>
@@ -49,10 +47,12 @@
                                     <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">Courses</a></li>
                                     <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">View Campus</a></li>
                                 </ul>
+                                <i id="menu-btn-2" class="fa-solid fa-bars" style="color: #ffffff; font-size: 25px;"></i>
                             </div>
                         </nav>
                         <div id="search-bar-main">
                             <h1>Example College of Technology & Science, Gwalior</h1>
+                            <p>Gwalior, Madhya Pradesh</p>
                             <div id="search-bar">
                                 <a onclick="document.getElementById('dream-div').scrollIntoView({ block: 'center',  behavior: 'smooth' })">Overview</a>
                                 <a onclick="document.getElementById('nirf-section').scrollIntoView({ block: 'center',  behavior: 'smooth' })">Rankings</a>
@@ -141,7 +141,7 @@
                 <h1>MITS JEE Mains Cutoff 2023</h1>
                 <div id="cutoff-filter-div">
                     <select id="cate-input">
-                        <option value="">Select Category</option>
+                        <option value="notsel">Select Category</option>
                         <option value="UR">Unreserved</option>
                         <option value="SC">SC</option>
                         <option value="ST">ST</option>
@@ -151,7 +151,7 @@
                     </select>
         
                     <select id="class-input">
-                        <option value="">Select Class</option>
+                        <option value="notsel">Select Class</option>
                         <option value="X">NIL</option>
                         <option value="S">Sainik</option>
                         <option value="TS">Technical Stream</option>
@@ -160,13 +160,46 @@
                     </select>
         
                     <select id="domi-input">
-                        <option value="">Select Quota</option>
+                        <option value="notsel">Select Quota</option>
                         <option value="OP">Open Quota</option>
                         <option value="F">Female Quota</option>
                     </select>
         
                 <button id="check-btn" onclick="
+                document.getElementById('alert-no-data').style.display = 'none';
+                document.getElementById('alert-1').style.display = 'none';
+                document.getElementById('alert-2').style.display = 'none';
+                document.getElementById('alert-3').style.display = 'none';
 
+
+                if (document.getElementById('cate-input').value === 'notsel') {
+                    document.getElementById('alert-1').style.display = 'block';
+                } else if (document.getElementById('class-input').value === 'notsel') {
+                    document.getElementById('alert-2').style.display = 'block';
+                } else if (document.getElementById('domi-input').value === 'notsel') {
+                    document.getElementById('alert-3').style.display = 'block';
+                } else {
+                    let processRound = 0;
+            let tableHtml = (document.getElementById('table-after-search').innerHTML);
+            tableHtml = '';
+        
+            let cateInput = document.getElementById('cate-input').value;
+            let classInput = document.getElementById('class-input').value;
+            let domiInput = document.getElementById('domi-input').value;
+        
+            const collegeName = `Acropolis Institute of Technology & Research, Indore (2005)`;
+            document.getElementById('cutoff-section').style.display = 'flex';
+
+        
+            if (cateInput === 'EWS') {
+                findDataEws(cateInput, classInput, domiInput, collegeName, processRound,tableHtml);
+            } else if (cateInput === 'FW/OP'){
+                findDataFw(cateInput, classInput, domiInput, collegeName, processRound, tableHtml);
+            } else {
+                findData(cateInput, classInput, domiInput, collegeName, processRound, tableHtml);
+            }
+                }
+/*
             let processRound = 0;
             let tableHtml = (document.getElementById('table-after-search').innerHTML);
             tableHtml = '';
@@ -186,7 +219,23 @@
             } else {
                 findData(cateInput, classInput, domiInput, collegeName, processRound, tableHtml);
             }
+            */
                 ">Check</button>
+                </div>
+
+
+                <div class="alert alert-danger" role="alert" id="alert-1">
+                    Please Select Your Category!
+                </div>
+                <div class="alert alert-danger" role="alert" id="alert-2">
+                    Please Select Your Class!
+                </div>
+                <div class="alert alert-danger" role="alert" id="alert-3">
+                    Please Select Your Quota!
+                </div>
+
+                <div class="alert alert-primary" role="alert" id="alert-no-data">
+                    No Data Found For The Selected Category/Class/Quota. Search Again Choosing Different Category/Class/Quota.
                 </div>
         </div>
         <div id="cutoff-section">
@@ -211,14 +260,18 @@
                     <div class="cutoff-ads-head">
                         <h2>We Got This For You!</h2>
                     </div>
-                    <img src="ad-images/example.png" alt="" width="100%">
+                    <div id="ad-1">
+                        <img src="ad-images/example.png" alt="" width="100%">
+                    </div>
                 </div>
 
                 <div class="cutoff-ads">
                     <div class="cutoff-ads-head">
                         <h2>We Got This For You!</h2>
                     </div>
-                    <img src="ad-images/example.png" alt="" width="100%">
+                    <div id="ad-2">
+                        <img src="ad-images/example.png" alt="" width="100%">
+                    </div>
                 </div>
             </div>
         </div>
@@ -425,41 +478,41 @@
 
         <footer>
             <div id="footer-top">
-                <img src="images/Untitled.png" alt="O" width="20%">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum reprehenderit rem sit sapiente velit excepturi maiores unde dolor numquam.</p>
+                <img src="images/Untitled.png" alt="O" width="20%" id="footer-logo">
+                <p id="footer-about-us">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum reprehenderit rem sit sapiente velit excepturi maiores unde dolor numquam.</p>
             </div>
             <div id="footer-middle">
                 <div class="footer-middle-column">
-                    <h3>Company</h3>
-                    <a href="">About Us</a>
-                    <a href="">Contact Us</a>
-                    <a href="">Privacy Policy</a>
-                    <a href="">Disclaimer</a>
-                    <a href="">Credits</a>
+                    <h3 id="footer-column-1-heading">Company</h3>
+                    <a id="footer-1-of-col-1" href="">About Us</a>
+                    <a id="footer-2-of-col-1" href="">Contact Us</a>
+                    <a id="footer-3-of-col-1" href="">Privacy Policy</a>
+                    <a id="footer-4-of-col-1" href="">Disclaimer</a>
+                    <a id="footer-5-of-col-1" href="">Credits</a>
                 </div>
                 <div class="footer-middle-column">
-                    <h3>Top Colleges</h3>
-                    <a href="">IIT</a>
-                    <a href="">NIT</a>
-                    <a href="">IIIT</a>
-                    <a href="">IISER</a>
-                    <a href="">State Colleges</a>
+                    <h3 id="footer-column-2-heading">Top Colleges</h3>
+                    <a id="footer-1-of-col-2" href="">IIT</a>
+                    <a id="footer-2-of-col-2" href="">NIT</a>
+                    <a id="footer-3-of-col-2" href="">IIIT</a>
+                    <a id="footer-4-of-col-2" href="">IISER</a>
+                    <a id="footer-5-of-col-2" href="">State Colleges</a>
                 </div>
                 <div class="footer-middle-column">
-                    <h3>Our Products</h3>
-                    <a href="">College Predictor</a>
-                    <a href="">Rank Pridictor</a>
-                    <a href="">Privacy Policy</a>
-                    <a href="">Disclaimer</a>
-                    <a href="">Credits</a>
+                    <h3 id="footer-column-3-heading">Our Products</h3>
+                    <a id="footer-1-of-col-3" href="">College Predictor</a>
+                    <a id="footer-2-of-col-3" href="">Rank Pridictor</a>
+                    <a id="footer-3-of-col-3" href="">Privacy Policy</a>
+                    <a id="footer-4-of-col-3" href="">Disclaimer</a>
+                    <a id="footer-5-of-col-3" href="">Credits</a>
                 </div>
                 <div class="footer-middle-column">
-                    <h3>Follow Us</h3>
-                    <a href="">Instagram</a>
-                    <a href="">Facebook</a>
-                    <a href="">Linkedin</a>
-                    <a href="">Twitter</a>
-                    <a href="">Youtube</a>
+                    <h3 id="footer-column-4-heading">Follow Us</h3>
+                    <a id="footer-1-of-col-4" href="">Instagram</a>
+                    <a id="footer-2-of-col-4" href="">Facebook</a>
+                    <a id="footer-3-of-col-4" href="">Linkedin</a>
+                    <a id="footer-4-of-col-4" href="">Twitter</a>
+                    <a id="footer-5-of-col-4" href="">Youtube</a>
                 </div>
             </div>
             <div id="footer-bottom">
@@ -517,11 +570,31 @@
         -->
 
 
-
+        <script src="https://kit.fontawesome.com/1911cccf54.js" crossorigin="anonymous"></script>
         <script src="https://collegecounter.com/live-handle/top-perma.js"></script>
         <script src="https://collegecounter.com/live-handle/trending.js"></script>
-        <script src="https://collegecounter.com/Acropolis-Institute-of-Technology-and-Research/001-mpdte-2023-data.js"></script>
+        <script src="Cutoff-JavaScript/001.js"></script>
         <script src="https://collegecounter.com/live-handle/footer.js"></script>
+        <script src="https://collegecounter.com/live-handle/ads.js"></script>
+        <script>
+            //For Overview page
+            //document.getElementById('dream-div').scrollIntoView({ block: 'center',  behavior: 'smooth' })
+
+            //For Ranking Page
+            //document.getElementById('nirf-section').scrollIntoView({ block: 'center',  behavior: 'smooth' })
+
+            //For Cutoff Page
+            //document.getElementById('cutoff-head').scrollIntoView({ block: 'center',  behavior: 'smooth' })
+
+            //For Placement Page
+            //document.getElementById('placement-section').scrollIntoView({ block: 'center',  behavior: 'smooth' })
+
+            //For Courses Page
+            //document.getElementById('courses-section').scrollIntoView({ block: 'center',  behavior: 'smooth' })
+
+            //For Campus Page
+            //document.getElementById('campus-section').scrollIntoView({ block: 'center',  behavior: 'smooth' })
+        </script>
     </body>
     </html>
 
