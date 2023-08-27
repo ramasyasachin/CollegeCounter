@@ -9,6 +9,24 @@
     .dream-card-head img{
         height: 25px;
     }
+
+    #cutoff-section{
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    #cutoff-section-ad-sidebar{
+        width: 280px;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+        overflow: hidden;
+    }
 }
 
 
@@ -226,6 +244,37 @@
 
 
 @media screen and (max-width: 767px) {
+
+    #cutoff-section{
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 5px;
+        gap: 20px;
+    }
+
+    #the-first-table{
+        border-collapse: collapse;
+        text-align: start;
+        vertical-align: middle;
+        background-image: url('https://collegecounter.com/images/trans.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        overflow: scroll;
+    }
+
+    #the-first-table th, td{
+        border: 1px solid rgba(0, 0, 0, 0.737);
+        padding: 15px;
+        font-family: 'Noto Sans', sans-serif;
+        letter-spacing: 0.07rem;
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+
     #search-bar-main h1{
         color: white;
         font-family: 'Noto Sans', sans-serif;
@@ -495,8 +544,22 @@
     }
 }
 
+@media screen and (max-width: 520px) {
+    #scroll-kar-le-saale{
+        display: inline-block;
+    }
+}
+
 
 @media screen and (max-width: 479px) {
+
+
+
+    #cutoff-data-section{
+        flex-grow: 1;
+        overflow: scroll;
+    }
+
     #below-sr-btn-div{
         display: flex;
         flex-direction: row;
