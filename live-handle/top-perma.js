@@ -1,4 +1,4 @@
-document.getElementById('logo').src = 'https://collegecounter.com/images/Untitled.png';
+document.getElementById('logo').src = 'https://collegecounter.com/images/light-logo.png';
 
 
 
