@@ -47,7 +47,42 @@
                                     <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">Courses</a></li>
                                     <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">View Campus</a></li>
                                 </ul>
-                                <i id="menu-btn-2" class="fa-solid fa-bars" style="color: #ffffff; font-size: 25px;"></i>
+                                <i onclick="
+                                document.getElementById('mobile-first-navbar').classList.add('active');
+                                " id="menu-btn-2" class="fa-solid fa-bars" style="color: #ffffff; font-size: 25px; cursor: pointer;"></i>
+                            </div>
+                            <div id="mobile-first-navbar" class="inactive">
+                                <div id="navigation-of-nav">
+                                    <h1>College Counter Navigation</h1>
+                                    <i onclick="
+                                    document.getElementById('mobile-first-navbar').classList.remove('active');
+                                    " class="fa-solid fa-xmark" style="color: #000000; font-size: 25px; cursor: pointer;"></i>
+                                </div>
+                                <div id="botton-nav-mo">
+                                    <h2>Explore The Platform</h2>
+                                <div id="perma-btn-in-mfn">
+                                    <a id="menu-om-1" href="">Item 1</a>
+                                    <a id="menu-om-2" href="">Item 1</a>
+                                    <a id="menu-om-3" href="">Item 1</a>
+                                    <a id="menu-om-4" href="">Item 1</a>
+                                    <a id="menu-om-5" href="">Item 1</a>
+                                    <a id="menu-om-6" href="">Item 1</a>
+                                    <a id="menu-om-7" href="">Item 1</a>
+                                    <a id="menu-om-8" href="">Item 1</a>
+                                </div>
+                            </div>
+                            <div id="botton-nav-mo">
+                                <h2>Explore This College</h2>
+                                <div id="page-btn-in-mfn">
+                                    <a href="">Home</a>
+                                    <a href="">Overview</a>
+                                    <a href="">Ranking</a>
+                                    <a href="">Cutoff</a>
+                                    <a href="">Placement</a>
+                                    <a href="">Courses</a>
+                                    <a href="">View Campus</a>
+                                </div>
+                            </div>
                             </div>
                         </nav>
                         <div id="search-bar-main">
