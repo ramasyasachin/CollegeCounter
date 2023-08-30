@@ -173,7 +173,33 @@
         </div>
 
             <div id="cutoff-head">
-                <h1>MITS JEE Mains Cutoff 2023</h1>
+                <h1 id="cutoff-title">MITS JEE Mains Cutoff 2023</h1>
+                <div id="change-year-div">
+                    <select name="year-cutoff" id="year-cutoff">
+                        <option value="">Change Year</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                    </select>
+                    <button onclick="
+                    
+                    //let cutoffYear = 2023;
+
+                    document.getElementById('wrong-deal-with-yearchange').style.display = 'none';
+
+                    if (document.getElementById('year-cutoff').value === '') {
+                        document.getElementById('wrong-deal-with-yearchange').style.display = 'block';
+                    } else {
+                        document.getElementById('cutoff-title').innerHTML = 'MITS JEE Mains Cutoff' + ' ' + (document.getElementById('year-cutoff').value);
+                        cutoffYear = document.getElementById('year-cutoff').value;
+                        console.log(cutoffYear);
+                    }
+
+
+                    ">Update</button>
+                </div>
+                <div id="wrong-deal-with-yearchange">
+                    Arrey! Year to select karo pahle. Nahi to by default hum aapko 2023 ka cutoff data dikhayenge.
+                </div>
                 <div id="cutoff-filter-div">
                     <select id="cate-input">
                         <option value="notsel">Select Category</option>
@@ -227,11 +253,11 @@
 
         
             if (cateInput === 'EWS') {
-                findDataEws(cateInput, classInput, domiInput, collegeName, processRound,tableHtml);
+                findDataEws(cateInput, classInput, domiInput, collegeName, processRound,tableHtml, cutoffYear);
             } else if (cateInput === 'FW/OP'){
-                findDataFw(cateInput, classInput, domiInput, collegeName, processRound, tableHtml);
+                findDataFw(cateInput, classInput, domiInput, collegeName, processRound, tableHtml, cutoffYear);
             } else {
-                findData(cateInput, classInput, domiInput, collegeName, processRound, tableHtml);
+                findData(cateInput, classInput, domiInput, collegeName, processRound, tableHtml, cutoffYear);
             }
                 }
 /*
@@ -291,6 +317,8 @@
                     <tbody id="table-after-search"></tbody>
                 </table>
             </div>
+
+            <!--
             <div id="cutoff-section-ad-sidebar">
                 <div class="cutoff-ads">
                     <div class="cutoff-ads-head">
@@ -310,6 +338,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
 
 
@@ -607,9 +636,9 @@
 
 
         <script src="https://kit.fontawesome.com/1911cccf54.js" crossorigin="anonymous"></script>
-        <script src="https://collegecounter.com/live-handle/top-perma.js"></script>
+        <script src="live-handle/top-perma.js"></script>
         <script src="https://collegecounter.com/live-handle/trending.js"></script>
-        <script src="https://collegecounter.com/Acropolis-Institute-of-Technology-and-Research/acropolis-mpdte-23-data.js"></script>
+        <script src="Cutoff-JavaScript/exampledata.js"></script>
         <script src="https://collegecounter.com/live-handle/footer.js"></script>
         <script src="https://collegecounter.com/live-handle/ads.js"></script>
         <script>
