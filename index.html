@@ -3,8 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>College Counter - Find Your Dream College</title>
+        <title>CollegeCounter - Find Your Dream College</title>
         <link rel="stylesheet" href="College-Profile-CSS/style.css">
+        <link rel="stylesheet" href="College-Profile-CSS/media.css">
+
+        <link rel="icon" href="images/fevicon.png" type="image/png">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,14 +23,14 @@
                         <nav>
                             <div id="navbar-topper">
                                 <ul>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn">Bachlor of Technology</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn">Master of Technology</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn">Management</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn">Bachlor of Science</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn">IIMs</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn">IISERs</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn">MITs</a></li>
-                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn">RAMs</a></li>
+                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-1">Bachlor of Technology</a></li>
+                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-2">Master of Technology</a></li>
+                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-3">Management</a></li>
+                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-4">Bachlor of Science</a></li>
+                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-5">IIMs</a></li>
+                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-6">IISERs</a></li>
+                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-7">MITs</a></li>
+                                    <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn" id="menu-op-8">RAMs</a></li>
                                 </ul>
                                 <ul>
                                     <li class="nav-top-list-item"><a href="#" class="nav-top-list-btn">About Us</a></li>
@@ -35,31 +38,79 @@
                                 </ul>
                             </div>
                             <div id="navbar-normal">
-                                <img src="images/Untitled.png" alt="logo here" height="40px">
+                                <img src="images/Untitled.png" alt="logo here" height="40px" id="logo">
                                 <ul>
                                     <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">Home</a></li>
                                     <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">Engineering Colleges</a></li>
                                     <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">Medical Colleges</a></li>
                                     <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">Management Institutes</a></li>
                                     <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">Entrance Exams</a></li>
-                                    <li class="nav-norml-list-item"><a href="#" class="nav-norml-list-btn">Internships</a></li>
                                 </ul>
+                                <i onclick="
+                                document.getElementById('mobile-first-navbar').classList.add('active');
+                                " id="menu-btn-2" class="fa-solid fa-bars" style="color: #ffffff; font-size: 25px; cursor: pointer;"></i>
+                            </div>
+                            <div id="mobile-first-navbar" class="inactive">
+                                <div id="navigation-of-nav">
+                                    <h1>College Counter Navigation</h1>
+                                    <i onclick="
+                                    document.getElementById('mobile-first-navbar').classList.remove('active');
+                                    " class="fa-solid fa-xmark" style="color: #000000; font-size: 25px; cursor: pointer;"></i>
+                                </div>
+                                <div id="botton-nav-mo">
+                                    <h2>Explore The Platform</h2>
+                                <div id="perma-btn-in-mfn">
+                                    <a id="menu-om-1" href="">Item 1</a>
+                                    <a id="menu-om-2" href="">Item 1</a>
+                                    <a id="menu-om-3" href="">Item 1</a>
+                                    <a id="menu-om-4" href="">Item 1</a>
+                                    <a id="menu-om-5" href="">Item 1</a>
+                                    <a id="menu-om-6" href="">Item 1</a>
+                                    <a id="menu-om-7" href="">Item 1</a>
+                                    <a id="menu-om-8" href="">Item 1</a>
+                                </div>
+                            </div>
+                            <div id="botton-nav-mo">
+                                <h2>Explore This College</h2>
+                                <div id="page-btn-in-mfn">
+                                    <a href="">Home</a>
+                                    <a href="">Overview</a>
+                                    <a href="">Ranking</a>
+                                    <a href="">Cutoff</a>
+                                    <a href="">Placement</a>
+                                    <a href="">Courses</a>
+                                    <a href="">View Campus</a>
+                                </div>
+                            </div>
                             </div>
                         </nav>
                         <div id="search-bar-main">
                             <h1>Search Your Dream College and Aimed Exams</h1>
                             <div id="search-bar">
-                                <input type="text" placeholder="Type Here To Search..." id="searchtext">
+                                <input type="text" placeholder="Type Here To Search..." id="searchtext" onkeyup="searchFunction()" onmousedown="document.getElementById('search-open').style.display = 'flex'" title="Type in a name">
                                 <a href="#">Search</a>
                             </div>
+                            <div id="search-open">
+                                <div id="search-open-top">
+                                    <input type="text" placeholder="Type Here To Search..." id="searchtextopen" onkeyup="searchFunction()" title="Type in a name">
+                                    <button onclick="document.getElementById('search-open').style.display = 'none';">BACK</button>
+                                </div>
+                                <img src="images/ram-search.png" alt="" id="ram-search-img">
+                                <div id="search-result">
+                                    <ul id="myUL">
+                                        <li>no data</li>
+                                      </ul>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div id="below-search-bar-options">
                             <p>*Trending on College Counter</p>
                             <div id="below-sr-btn-div">
-                                <a href="" class="below-sr-btn">JEE Mains</a>
-                                <a href="" class="below-sr-btn">JEE Advance</a>
-                                <a href="" class="below-sr-btn">GATE</a>
-                                <a href="" class="below-sr-btn">Result</a>
+                                <a href="" class="below-sr-btn" id="trending1">JEE Mains</a>
+                                <a href="" class="below-sr-btn" id="trending2">JEE Advance</a>
+                                <a href="" class="below-sr-btn" id="trending3">GATE</a>
+                                <a href="" class="below-sr-btn" id="trending4">Result</a>
                             </div>
                         </div>
                     </div>
@@ -166,7 +217,32 @@
         
 
         <!--<script src="script.js"></script>-->
+
+        <script>
+            function searchFunction() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("searchtextopen");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+                document.getElementById('myUL').style.display = 'block';
+                document.getElementById('ram-search-img').style.display = 'none';
+            }
+            </script>
+            <script src="https://kit.fontawesome.com/1911cccf54.js" crossorigin="anonymous"></script>
+            <script src="live-handle/top-perma.js"></script>
         <script src="live-handle/footer.js"></script>
+        <script src="live-handle/trending.js"></script>
         <script src="live-handle/search.js"></script>
+        
     </body>
     </html>
