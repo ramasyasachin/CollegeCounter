@@ -83,6 +83,19 @@ nav{
     flex-grow: 1;
 }
 
+#search-opener{
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background-color: transparent;
+    color: white;
+    border: 0px solid transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.499);
+    width: auto;
+    padding: 2px;
+}
+
 .nav-top-list-btn{
     color: white;
     font-family: 'Noto Sans', sans-serif;
@@ -417,6 +430,24 @@ nav{
 
 /*cutoff section*/
 
+#ad-section-big{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    padding-block: 20px;
+    margin-bottom: 80px;
+}
+
+#ad-section-small{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    padding-block: 20px;
+    margin-bottom: 80px;
+}
+
 #cutoff-head{
     width: 100%;
     padding: 20px;
@@ -426,7 +457,7 @@ nav{
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
-    margin-top: 110px;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 

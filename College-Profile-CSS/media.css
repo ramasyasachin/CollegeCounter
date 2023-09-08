@@ -1,0 +1,183 @@
+@media screen and (max-width: 1100px){
+    #navbar-topper{
+        display: none;
+    }
+
+    #navbar-normal ul{
+        display: none;
+    }
+
+    #menu-btn-2{
+        align-self: center;
+        display: inline-block;
+    }
+
+    .dream-card{
+        width: 45%;
+        height: auto;
+        border: 1px solid rgb(255, 71, 15);
+        padding: 25px;
+        border-radius: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 991px){
+
+    #footer-middle{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 50px;
+        margin-inline: auto;
+        align-content: center;
+        align-items: center;
+    }
+    
+    .footer-middle-column{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px;
+        flex-wrap: wrap;  
+        align-content: center;
+        align-items: center;  
+    }
+
+    #footer-top{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        padding: 30px;
+        gap: 40px;
+        margin-inline: auto;
+        margin-bottom: 40px;
+        padding-top: 50px;
+    }
+}
+
+
+@media screen and (max-width: 767px){
+
+    #ram-search-img{
+        width: 100%;
+        margin-top: 20vh;
+    }
+
+    #search-bar-main{
+        width: 100%;
+        height: 400px;
+    }
+
+    .dream-card{
+        width: 85%;
+        height: auto;
+        border: 1px solid rgb(255, 71, 15);
+        padding: 25px;
+        border-radius: 15px;
+        margin-block: 30px;
+    }
+
+    #search-bar{
+        width: 100%;
+    }
+
+    #search-bar input{
+        width: 70%;
+    }
+
+    #footer-top{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        gap: 35px;
+        margin-inline: auto;
+        margin-bottom: 40px;
+    }
+
+    #footer-top p{
+        width: 100%;
+        text-align: center;
+    }
+
+    #footer-top img{
+        width: 60%;
+        padding-top: 25px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    #search-bar-main h1{
+        color: white;
+        font-family: 'Noto Sans', sans-serif;
+        text-decoration: none;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.07rem;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #search-bar input{
+        width: 50%;
+    }
+
+    #search-bar-main{
+        gap: 15px;
+    }
+
+    .below-sr-btn{
+        width: 40%;
+        text-align: center;
+    }
+
+    #below-sr-btn-div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .below-sr-btn:hover{
+        width: 40%;
+        text-align: center;
+    }
+
+    #below-search-bar-options{
+        padding: 10px;
+        padding-bottom: 25px;
+    }
+
+    .dream-card{
+        width: 95%;
+        height: auto;
+        border: 1px solid rgb(255, 71, 15);
+        padding: 25px;
+        border-radius: 15px;
+    }
+}
+
+
+@media screen and (max-width: 440px){
+    #search-bar-main h1{
+        color: white;
+        font-family: 'Noto Sans', sans-serif;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.07rem;
+        text-align: center;
+        padding: 20px;
+    }
+
+}
